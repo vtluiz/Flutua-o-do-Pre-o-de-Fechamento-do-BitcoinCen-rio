@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Dados fornecidos
+data = {
+    'Date': ['2014-09-17', '2014-09-18', '2014-09-19', '2014-09-20', '2014-09-21', '2014-09-22', '2014-09-23', '2014-09-24', 
+             '2014-09-25', '2014-09-26', '2014-09-27', '2014-09-28', '2014-09-29', '2014-09-30', '2014-10-01', '2014-10-02', 
+             '2014-10-03', '2014-10-04', '2014-10-05'],
+    'Close': [457.3340149, 424.4400024, 394.79599, 408.9039917, 398.8210144, 402.1520081, 435.7909851, 423.2049866, 
+              411.5740051, 404.4249878, 399.519989, 377.1809998, 375.4670105, 386.9440002, 383.6149902, 375.071991, 
+              359.5119934, 328.8659973, 320.5100098]
+}
+
+# Criando o DataFrame
+df = pd.DataFrame(data)
+df['Date'] = pd.to_datetime(df['Date'])
+
+# Criando o gráfico
+plt.figure(figsize=(10, 6))
+plt.plot(df['Date'], df['Close'], marker='o', linestyle='-', color='b')
+plt.title('Preço de Fechamento ao Longo do Tempo')
+plt.xlabel('Data')
+plt.ylabel('Preço de Fechamento (USD)')
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Exibindo o gráfico
+plt.show()
