@@ -1,17 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
 
-### 2. **.gitignore**
+# Load the dataset
+df = pd.read_csv('data/stock_prices.csv')
 
-```gitignore
-# Ignore Python cache files
-__pycache__/
-*.py[cod]
+# Plot stock closing prices over time
+plt.figure(figsize=(10, 6))
+plt.plot(df['Date'], df['Close'], label='Close Price')
+plt.title('Stock Closing Prices Over Time')
+plt.xlabel('Date')
+plt.ylabel('Price')
+plt.xticks(rotation=45)
+plt.legend()
+plt.tight_layout()
 
-# Ignore virtual environment folder
-venv/
+# Save plot to output folder
+plt.savefig('output/closing_prices.png')
 
-# Ignore data and output files
-data/*.csv
-output/*
-
-# Ignore system files
-.DS_Store
+plt.show()
