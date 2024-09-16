@@ -1,0 +1,17 @@
+
+### 2. **.gitignore**
+
+```gitignore
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folder
+venv/
+
+# Ignore data and output files
+data/*.csv
+output/*
+
+# Ignore system files
+.DS_Store
